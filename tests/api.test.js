@@ -3,7 +3,7 @@ const app = require('../index');
 describe('Electricity API Endpoints', () => {
 // Test Case 1: Total Usage
     it('should return total electricity usage for all years', async () => {
-        const res = await request(app).get('/api/usage/totalyear');
+        const res = await request(app).get('/api/usage/total-by-year');
         expect(res.status).toBe(200);
         expect(typeof res.body).toBe('object');
     });

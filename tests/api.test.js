@@ -16,7 +16,7 @@ describe('Electricity API Endpoints', () => {
 // Test Case 3: Verify Data Structure for Users
 
     it('should return total electricity users for all years', async () => {
-        const res = await request(app).get('/api/pastusers/Bangkok');
+        const res = await request(app).get('/api/users-history/Bangkok');
         expect(res.statusCode).toEqual(200);
         expect(Array.isArray(res.body)).toBe(true);
     });

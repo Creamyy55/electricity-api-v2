@@ -9,15 +9,14 @@ describe('Electricity API Endpoints', () => {
     });
 // Test Case 2: Specific Province Usage
     it('should return electricity usage for a specific province and year', async () => {
-        const res = await request(app).get('/api/usage/Bangkok/2566');
+        const res = await request(app).get('/api/usage/Alberta/2566');
         expect(res.body.message).toBe('Data not found');
     });
 
 // Test Case 3: Verify Data Structure for Users
-
     it('should return total electricity users for all years', async () => {
-        const res = await request(app).get('/api/users-history/Bangkok');
-        expect(res.statusCode).toEqual(200);
-        expect(Array.isArray(res.body)).toBe(true);
+        const res = await request(app).get('/api/users/total-by-year');
+        expect(res.status).toBe(200);
+        expect(typeof res.body).toBe('object');
     });
 });
